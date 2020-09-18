@@ -1,54 +1,54 @@
 import { useState } from 'react'
 import Head from 'next/head'
 import HomeIkon from '../public/assets/svg/home.svg'
-import {Hovedknapp} from 'nav-frontend-knapper'
-import {Innholdstittel, Sidetittel, Normaltekst, Element, Systemtittel} from 'nav-frontend-typografi'
+import { Hovedknapp } from 'nav-frontend-knapper'
+import { Innholdstittel, Sidetittel, Normaltekst, Element, Systemtittel } from 'nav-frontend-typografi'
 import { AlertStripeSuksess, AlertStripeFeil } from 'nav-frontend-alertstriper'
 
 Home.getInitialProps = async (ctx) => {
-    const res = await fetch('http://localhost:3000/api/get-registrering')
-    return await res.json();
+  const res = await fetch('http://localhost:3000/api/get-registrering')
+  return await res.json()
 }
 
-export default function Home(props) {
-    const [status, setStatus] = useState('IKKE_SENDT')
-    const handleOverforing = async () => {
-        const id = props.registrering.id
-        const res = await fetch(`http://localhost:3000/api/put-registrering?id=${id}`)
-        const status = await res.json()
-        setStatus(status.status)
-    }
+export default function Home (props) {
+  const [status, setStatus] = useState('IKKE_SENDT')
+  const handleOverforing = async () => {
+    const id = props.registrering.id
+    const res = await fetch(`http://localhost:3000/api/put-registrering?id=${id}`)
+    const status = await res.json()
+    setStatus(status.status)
+  }
 
-    return (
-        <div className='root'>
-            <Head>
-                <title>Arbeidssøkerregistrering - veileder</title>
-            </Head>
+  return (
+    <div className='root'>
+      <Head>
+        <title>Arbeidssøkerregistrering - veileder</title>
+      </Head>
 
-            <section>
-                <div className='fo'>
-                    <HomeIkon style={{height: '20px'}}/>
-                </div>
-            </section>
+      <section>
+        <div className='fo'>
+          <HomeIkon style={{ height: '20px' }} />
+        </div>
+      </section>
 
-            <main>
-                <Sidetittel>Jomar Testursson</Sidetittel>
-                <Innholdstittel>Besvarelse</Innholdstittel>
-                <Systemtittel>Bruker sendte inn arbeidssøkerregistreringen {new Date(props.registrering.opprettetDato).toLocaleDateString()}</Systemtittel>
-                {props.registrering.teksterForBesvarelse.map((besvarelse => (
-                    <>
-                        <Element>{besvarelse.sporsmal}</Element>
-                        <Normaltekst>{besvarelse.svar}</Normaltekst>
-                    </>
-                )))}
-                <Element>Siste stilling</Element>
-                <Normaltekst>{props.registrering.sisteStilling.label}</Normaltekst>
-                {status === 'IKKE_SENDT' && <Hovedknapp onClick={handleOverforing}>Overfør til Arena</Hovedknapp>}
-                {status === 'FEIL' && <AlertStripeFeil>Noe gikk galt under overføringen</AlertStripeFeil>}
-                {status === 'SENDT' && <AlertStripeSuksess>Brukeren er overført</AlertStripeSuksess>}
-            </main>
+      <main>
+        <Sidetittel>Jomar Testursson</Sidetittel>
+        <Innholdstittel>Besvarelse</Innholdstittel>
+        <Systemtittel>Bruker sendte inn arbeidssøkerregistreringen {new Date(props.registrering.opprettetDato).toLocaleDateString()}</Systemtittel>
+        {props.registrering.teksterForBesvarelse.map(besvarelse => (
+          <>
+            <Element>{besvarelse.sporsmal}</Element>
+            <Normaltekst>{besvarelse.svar}</Normaltekst>
+          </>
+        ))}
+        <Element>Siste stilling</Element>
+        <Normaltekst>{props.registrering.sisteStilling.label}</Normaltekst>
+        {status === 'IKKE_SENDT' && <Hovedknapp onClick={handleOverforing}>Overfør til Arena</Hovedknapp>}
+        {status === 'FEIL' && <AlertStripeFeil>Noe gikk galt under overføringen</AlertStripeFeil>}
+        {status === 'SENDT' && <AlertStripeSuksess>Brukeren er overført</AlertStripeSuksess>}
+      </main>
 
-            <style jsx>{`
+      <style jsx>{`
         .root {
           max-width: 100%;
           display: flex;
@@ -62,7 +62,7 @@ export default function Home(props) {
           text-align: center;
         }
       `}
-            </style>
-        </div>
-    )
+      </style>
+    </div>
+  )
 }
