@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import HomeIkon from '../public/assets/svg/home.svg'
 import {Hovedknapp} from 'nav-frontend-knapper'
 import {Innholdstittel, Sidetittel, Normaltekst, Element, Systemtittel} from 'nav-frontend-typografi'
+import { AlertStripeSuksess, AlertStripeFeil } from 'nav-frontend-alertstriper'
 
 Home.getInitialProps = async (ctx) => {
     const res = await fetch('http://localhost:3000/api/get-registrering')
@@ -9,11 +11,12 @@ Home.getInitialProps = async (ctx) => {
 }
 
 export default function Home(props) {
-
-    const handleOverforing = () => {
-        const id = props.registrering.id;
-        const url =
-        const res = await fetch()
+    const [status, setStatus] = useState('IKKE_SENDT')
+    const handleOverforing = async () => {
+        const id = props.registrering.id
+        const res = await fetch(`http://localhost:3000/api/put-registrering?id=${id}`)
+        const status = await res.json()
+        setStatus(status.status)
     }
 
     return (
@@ -40,7 +43,9 @@ export default function Home(props) {
                 )))}
                 <Element>Siste stilling</Element>
                 <Normaltekst>{props.registrering.sisteStilling.label}</Normaltekst>
-                <Hovedknapp onClick={handleOverforing}>Overfør til Arena</Hovedknapp>
+                {status === 'IKKE_SENDT' && <Hovedknapp onClick={handleOverforing}>Overfør til Arena</Hovedknapp>}
+                {status === 'FEIL' && <AlertStripeFeil>Noe gikk galt under overføringen</AlertStripeFeil>}
+                {status === 'SENDT' && <AlertStripeSuksess>Brukeren er overført</AlertStripeSuksess>}
             </main>
 
             <style jsx>{`

@@ -1,6 +1,7 @@
 const putRegistrering  = async (request, response) => {
   const { id } = await request.query
-  response.json({ success: true, id })
+  const status = Math.random() > 0.5 ? 'SENDT' : 'FEIL'
+  response.json({ status, id })
 }
 
 export default putRegistrering
