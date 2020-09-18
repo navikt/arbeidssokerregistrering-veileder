@@ -1,9 +1,9 @@
-import "./_app.less";
-import "nav-frontend-typografi-style/src/index.less";
+import './_app.less'
+import 'nav-frontend-typografi-style/src/index.less'
 
-export default function App({ Component, pageProps }) {
+export default function App ({ Component, pageProps }) {
   return (
-    <div className="app">
+    <div className='app'>
       <Component {...pageProps} />
 
       <style jsx>{`
@@ -17,7 +17,8 @@ export default function App({ Component, pageProps }) {
           margin: auto;
           padding: 0.5rem 0.5rem 7.5rem 0.5rem;
         }
-      `}</style>
+      `}
+      </style>
 
       <style jsx global>{`
         html,
@@ -31,7 +32,8 @@ export default function App({ Component, pageProps }) {
         * {
           box-sizing: border-box;
         }
-      `}</style>
+      `}
+      </style>
     </div>
-  );
+  )
 }

@@ -1,18 +1,18 @@
-import Head from "next/head";
-import HomeIkon from "../public/assets/svg/home.svg";
-import { Hovedknapp } from "nav-frontend-knapper";
-import { Sidetittel } from "nav-frontend-typografi";
+import Head from 'next/head'
+import HomeIkon from '../public/assets/svg/home.svg'
+import { Hovedknapp } from 'nav-frontend-knapper'
+import { Sidetittel } from 'nav-frontend-typografi'
 
-export default function Home(props) {
+export default function Home (props) {
   return (
-    <div className="root">
+    <div className='root'>
       <Head>
         <title>Arbeidssøkerregistrering - veileder</title>
       </Head>
 
       <section>
-        <div className="fo">
-          <HomeIkon style={{ height: "20px" }} />
+        <div className='fo'>
+          <HomeIkon style={{ height: '20px' }} />
         </div>
       </section>
 
@@ -32,12 +32,12 @@ export default function Home(props) {
           margin: auto;
         }
         
-
         section {
           justify-content: center;
           text-align: center;
         }
-      `}</style>
+      `}
+      </style>
     </div>
-  );
+  )
 }
