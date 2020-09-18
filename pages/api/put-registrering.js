@@ -1,5 +1,5 @@
 const putRegistrering  = async (request, response) => {
-  const { id } = await request.body
+  const { id } = await request.query
   response.json({ success: true, id })
 }
 
