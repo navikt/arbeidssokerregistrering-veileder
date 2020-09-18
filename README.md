@@ -12,10 +12,14 @@ Krever [Node.js](https://nodejs.org/), fortrinnsvis versjon >= 14
 - innstaller avhengigheter `npm i`
 - start utviklingsserver `npm run dev`
 
-# Henvendelser
+## Henvendelser
 
 Spørsmål knyttet til koden eller prosjektet kan stilles via issues her på github.
 
-# For NAV-ansatte
+## For NAV-ansatte
 
 Interne henvendelser kan sendes via Slack i kanalen [#område-arbeid-tech](https://nav-it.slack.com/archives/CLTFAEW75)
+
+## Lisens
+
+[MIT](LICENSE)
