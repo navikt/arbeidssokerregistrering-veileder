@@ -1,6 +1,6 @@
-export default (req, res) => {
-  res.statusCode = 200
-  res.json(bruker)
+export default (request, response) => {
+  response.statusCode = 200
+  response.json(bruker)
 }
 
 export const bruker = {
