@@ -20,6 +20,11 @@ export default function Home (props) {
     setStatus(status)
   }
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    handleOverforing();
+  }
+
   return (
     <div className='root'>
       <Head>
@@ -44,7 +49,7 @@ export default function Home (props) {
         ))}
         <Element>Siste stilling</Element>
         <Normaltekst>{props.registrering.sisteStilling.label}</Normaltekst>
-        {status === 'IKKE_SENDT' && <Hovedknapp onClick={handleOverforing}>Overfør til Arena</Hovedknapp>}
+        {status === 'IKKE_SENDT' && <Hovedknapp onClick={handleClick}>Overfør til Arena</Hovedknapp>}
         {status === 'FEIL' && <AlertStripeFeil>Noe gikk galt under overføringen</AlertStripeFeil>}
         {status === 'SENDT' && <AlertStripeSuksess>Brukeren er overført</AlertStripeSuksess>}
       </main>
