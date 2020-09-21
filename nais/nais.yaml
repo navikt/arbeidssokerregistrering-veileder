@@ -19,6 +19,3 @@ spec:
   ingresses:
     - "https://arbeid.dev.adeo.no/arbeid/arbeidssokerregistrering-veileder"
     - "https://arbeid.dev.nav.no/arbeid/arbeidssokerregistrering-veileder"
-  env:
-    - name: NEXT_PUBLIC_API_URL
-      value: /api

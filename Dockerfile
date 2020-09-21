@@ -19,7 +19,9 @@ WORKDIR /usr/src/app
 ARG BASE_PATH
 ENV PORT=3000 \
     NODE_ENV=production \
-    BASE_PATH=$BASE_PATH
+    BASE_PATH=$BASE_PATH \
+    NEXT_PUBLIC_API_URL=/api
+
 
 EXPOSE 3000
 USER node
