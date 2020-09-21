@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import Head from 'next/head'
-import fetch from 'axios'
+import axios from 'axios'
 import HomeIkon from '../public/assets/svg/home.svg'
 import { Hovedknapp } from 'nav-frontend-knapper'
 import { Innholdstittel, Sidetittel, Normaltekst, Element, Systemtittel } from 'nav-frontend-typografi'
 import { AlertStripeSuksess, AlertStripeFeil } from 'nav-frontend-alertstriper'
 
 Home.getInitialProps = async (ctx) => {
-  const { data } = await fetch('http://localhost:3000/api/get-registrering')
+  const { data } = await axios('http://localhost:3000/api/get-registrering')
   return data
 }
 
@@ -15,7 +15,7 @@ export default function Home (props) {
   const [status, setStatus] = useState('IKKE_SENDT')
   const handleOverforing = async () => {
     const id = props.registrering.id
-    const { data } = await fetch(`http://localhost:3000/api/put-registrering?id=${id}`)
+    const { data } = await axios(`http://localhost:3000/api/put-registrering?id=${id}`)
     const { status } = data
     setStatus(status)
   }
