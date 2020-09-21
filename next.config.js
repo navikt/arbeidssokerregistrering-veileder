@@ -15,7 +15,7 @@ module.exports = withTranspileModules(
     withReactSvg({
       include: path.resolve(__dirname, 'public/assets/svg'),
       reactStrictMode: true,
-      basePath: process.env.BASE_PATH,
+      basePath: process.env.BASE_PATH
     })
   )
 )

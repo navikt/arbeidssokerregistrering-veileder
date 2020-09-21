@@ -21,8 +21,8 @@ export default function Home (props) {
   }
 
   const handleClick = (e) => {
-    e.preventDefault();
-    handleOverforing();
+    e.preventDefault()
+    handleOverforing()
   }
 
   return (
