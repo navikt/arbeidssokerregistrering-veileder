@@ -11,6 +11,7 @@ Krever [Node.js](https://nodejs.org/), fortrinnsvis versjon >= 14
 
 - klon repo
 - innstaller avhengigheter `npm i`
+- lag en `.env.local` basert på [eksempel.env.local](eksempel.env.local)
 - start utviklingsserver `npm run dev`
 
 ## Henvendelser

@@ -21,4 +21,4 @@ spec:
     - "https://arbeid.dev.nav.no/arbeid/arbeidssokerregistrering-veileder"
   env:
     - name: NEXT_PUBLIC_API_URL
-      value: https://arbeid.dev.nav.no/arbeid/arbeidssokerregistrering-veileder/api
+      value: /api
