@@ -15,7 +15,7 @@ export default function Home (props) {
   const [status, setStatus] = useState('IKKE_SENDT')
   const handleOverforing = async () => {
     const id = props.registrering.id
-    const { data } = await axios(`http://localhost:3000/api/put-registrering?id=${id}`)
+    const { data } = await axios(`http://localhost:3000/arbeid/arbeidssokerregistrering-veileder/api/put-registrering?id=${id}`)
     const { status } = data
     setStatus(status)
   }
