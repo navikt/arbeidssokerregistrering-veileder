@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "node server.js",
-    "test": "standard",
-    "standard-fix": "standard --fix",
+    "test": "jest",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
   },
   "dependencies": {
