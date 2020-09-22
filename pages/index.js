@@ -7,7 +7,7 @@ import { Innholdstittel, Sidetittel, Normaltekst, Element, Systemtittel } from '
 import { AlertStripeSuksess, AlertStripeFeil } from 'nav-frontend-alertstriper'
 
 Home.getInitialProps = async (ctx) => {
-  const { data } = await axios('http://localhost:3000/arbeid/arbeidssokerregistrering-veileder/api/get-registrering')
+  const { data } = await axios(`${process.env.NEXT_PUBLIC_API_URL}/get-registrering`)
   return data
 }
 
