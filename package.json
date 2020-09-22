@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "node server.js",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "lint": "standard",
     "lint:fix": "standard --fix",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
@@ -46,6 +46,7 @@
     "@testing-library/react": "11.0.4",
     "babel-jest": "26.3.0",
     "jest": "26.4.2",
+    "jest-transform-stub": "2.0.0",
     "standard": "14.3.4"
   }
 }
