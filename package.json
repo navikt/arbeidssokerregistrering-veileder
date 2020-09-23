@@ -47,6 +47,7 @@
     "babel-jest": "26.3.0",
     "jest": "26.4.2",
     "jest-transform-stub": "2.0.0",
+    "msw": "0.21.2",
     "standard": "14.3.4"
   }
 }

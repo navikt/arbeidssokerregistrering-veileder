@@ -1,10 +1,8 @@
-import { useState } from 'react'
 import Head from 'next/head'
 import axios from 'axios'
 import HomeIkon from '../public/assets/svg/home.svg'
-import { Hovedknapp } from 'nav-frontend-knapper'
 import { Innholdstittel, Sidetittel, Normaltekst, Element, Systemtittel } from 'nav-frontend-typografi'
-import { AlertStripeSuksess, AlertStripeFeil } from 'nav-frontend-alertstriper'
+import OverforTilArena from '../components/overfor-til-arena'
 
 Home.getInitialProps = async (ctx) => {
   const { data } = await axios(`http://localhost:3000${process.env.NEXT_PUBLIC_API_URL}/get-registrering`)
@@ -12,19 +10,7 @@ Home.getInitialProps = async (ctx) => {
 }
 
 export default function Home (props) {
-  const [status, setStatus] = useState('IKKE_SENDT')
-  const handleOverforing = async () => {
-    const id = props.registrering.id
-    const { data } = await axios(`${process.env.NEXT_PUBLIC_API_URL}/put-registrering?id=${id}`)
-    const { status } = data
-    setStatus(status)
-  }
-
-  const handleClick = (e) => {
-    e.preventDefault()
-    handleOverforing()
-  }
-
+  
   return (
     <div className='root'>
       <Head>
@@ -49,9 +35,7 @@ export default function Home (props) {
         ))}
         <Element>Siste stilling</Element>
         <Normaltekst>{props.registrering.sisteStilling.label}</Normaltekst>
-        {status === 'IKKE_SENDT' && <Hovedknapp onClick={handleClick}>Overfør til Arena</Hovedknapp>}
-        {status === 'FEIL' && <AlertStripeFeil>Noe gikk galt under overføringen</AlertStripeFeil>}
-        {status === 'SENDT' && <AlertStripeSuksess>Brukeren er overført</AlertStripeSuksess>}
+        <OverforTilArena id={props.registrering.id} />
       </main>
 
       <style jsx>{`
