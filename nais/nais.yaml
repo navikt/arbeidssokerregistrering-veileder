@@ -18,6 +18,7 @@ spec:
     timeout: 1
   ingresses:
     - "https://arbeid.dev.adeo.no/arbeid/arbeidssokerregistrering-veileder"
+    - "https://arbeid.dev.nav.no/arbeid/arbeidssokerregistrering-veileder"
   #accessPolicy:
   #  outbound:
   #    external:
