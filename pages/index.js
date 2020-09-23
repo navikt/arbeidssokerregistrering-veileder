@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import axios from 'axios'
-import HomeIkon from '../public/assets/svg/home.svg'
 import { Innholdstittel, Sidetittel, Normaltekst, Element, Systemtittel } from 'nav-frontend-typografi'
 import OverforTilArena from '../components/overfor-til-arena'
 import NAVSPA from '@navikt/navspa';
@@ -26,12 +25,6 @@ export default function Home (props) {
 
       <InternflateDecorator {...decoratorConfig}/>
 
-      <section>
-        <div className='fo'>
-          <HomeIkon style={{ height: '20px' }} />
-        </div>
-      </section>
-
       <main>
         <Sidetittel>Jomar Testursson</Sidetittel>
         <Innholdstittel>Besvarelse</Innholdstittel>
@@ -54,11 +47,6 @@ export default function Home (props) {
           flex-direction: column;
           justify-content: center;
           margin: auto;
-        }
-        
-        section {
-          justify-content: center;
-          text-align: center;
         }
       `}
       </style>
