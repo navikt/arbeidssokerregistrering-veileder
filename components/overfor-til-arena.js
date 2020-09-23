@@ -8,7 +8,7 @@ const OverforTilArena  = props => {
   const [status, setStatus] = useState('IKKE_SENDT')
 
   const handleOverforing = async () => {
-    const { data } = await axios(`${process.env.NEXT_PUBLIC_API_URL}/put-registrering?id=${id}`)
+    const { data } = await axios(`/api/put-registrering`)
     const { status } = data
     setStatus(status)
   }

@@ -5,9 +5,8 @@ import '@testing-library/jest-dom/extend-expect'
 import OverforTilArena from './overfor-til-arena'
 
 const server = setupServer(
-  rest.get(`/api/put-registrering?id=123`, (req, res, ctx) => {
-    const { id } = req.query
-    return res(ctx.json({ status: 'SENDT', id }))
+  rest.get(`/api/put-registrering`, (req, res, ctx) => {
+    return res(ctx.json({ status: 'SENDT', id: '123' }))
   })
 )
 
@@ -23,3 +22,12 @@ test('Viser knappen ved oppstart', async () => {
   expect(screen.getByRole('button')).toHaveTextContent('Overfør til Arena')
 })
 
+test('Viser suksessmelding ved overføring', async () => {
+  render(<OverforTilArena id='123' />)
+
+  fireEvent.click(screen.getByText('Overfør til Arena'))
+  
+  await waitFor(() => screen.getByText('Brukeren er overført'))
+
+  expect(screen.getByText('Brukeren er overført')).toBeTruthy()
+})
