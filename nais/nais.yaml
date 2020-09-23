@@ -18,7 +18,7 @@ spec:
     timeout: 1
   ingresses:
     - "https://arbeid.dev.adeo.no/arbeid/arbeidssokerregistrering-veileder"
-  accessPolicy:
-    outbound:
-      external:
-        - host: https://veilarbregistrering-q1.nais.preprod.local
+  #accessPolicy:
+  #  outbound:
+  #    external:
+  #      - host: https://veilarbregistrering-q1.nais.preprod.local

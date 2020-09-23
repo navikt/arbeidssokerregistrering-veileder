@@ -5,7 +5,7 @@ import { Innholdstittel, Sidetittel, Normaltekst, Element, Systemtittel } from '
 import OverforTilArena from '../components/overfor-til-arena'
 
 Home.getInitialProps = async (ctx) => {
-  const { data } = await axios(`${process.env.NEXT_PUBLIC_VEILARBREGISTRERING_URL}`)
+  const { data } = await axios(`http://localhost:3000${process.env.NEXT_PUBLIC_API_URL}/get-registrering`)
   return data
 }
 
