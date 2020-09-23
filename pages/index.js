@@ -3,6 +3,11 @@ import axios from 'axios'
 import HomeIkon from '../public/assets/svg/home.svg'
 import { Innholdstittel, Sidetittel, Normaltekst, Element, Systemtittel } from 'nav-frontend-typografi'
 import OverforTilArena from '../components/overfor-til-arena'
+import NAVSPA from '@navikt/navspa';
+
+const decoratorConfig = {
+  appname: 'Arbeidssøkerregistrering-veileder'
+}
 
 Home.getInitialProps = async (ctx) => {
   const { data } = await axios(`http://localhost:3000${process.env.NEXT_PUBLIC_API_URL}/get-registrering`)
@@ -10,12 +15,16 @@ Home.getInitialProps = async (ctx) => {
 }
 
 export default function Home (props) {
+
+  const InternflateDecorator = NAVSPA.importer('internarbeidsflatefs');
   
   return (
     <div className='root'>
       <Head>
         <title>Arbeidssøkerregistrering - veileder</title>
       </Head>
+
+      <InternflateDecorator {...decoratorConfig}/>
 
       <section>
         <div className='fo'>

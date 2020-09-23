@@ -1,7 +1,7 @@
 import './_app.less'
 import 'nav-frontend-typografi-style/src/index.less'
 
-export default function App ({ Component, pageProps }) {
+export default function App({Component, pageProps}) {
   return (
     <div className='app'>
       <Component {...pageProps} />
