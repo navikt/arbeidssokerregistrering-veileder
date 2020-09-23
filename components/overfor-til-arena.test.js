@@ -30,3 +30,20 @@ test('Viser suksessmelding ved overføring', async () => {
 
   expect(screen.getByText('Brukeren er overført')).toBeTruthy()
 })
+
+test('Viser feilmelding ved overføring som feiler', async () => {
+  server.use(
+    rest.get('/api/put-registrering', (req, res, ctx) => {
+      const id = req.url.searchParams.get('id')
+      return res(ctx.json({ status: 'FEIL', id }))
+    })
+  )
+
+  render(<OverforTilArena id='123' />)
+
+  fireEvent.click(screen.getByText('Overfør til Arena'))
+  
+  await waitFor(() => screen.getByText('Noe gikk galt under overføringen'))
+
+  expect(screen.getByText('Noe gikk galt under overføringen')).toBeTruthy()
+})
