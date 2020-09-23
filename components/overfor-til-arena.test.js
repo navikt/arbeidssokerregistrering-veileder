@@ -6,11 +6,10 @@ import OverforTilArena from './overfor-til-arena'
 
 const server = setupServer(
   rest.get(`/api/put-registrering`, (req, res, ctx) => {
-    return res(ctx.json({ status: 'SENDT', id: '123' }))
+    const id = req.url.searchParams.get('id')
+    return res(ctx.json({ status: 'SENDT', id }))
   })
 )
-
-const NEXT_PUBLIC_API_URL='/api'
 
 beforeAll(() => server.listen())
 afterEach(() => server.resetHandlers())

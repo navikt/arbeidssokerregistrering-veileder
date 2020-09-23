@@ -1,3 +1,6 @@
+const dotEnv = require('dotenv')
+dotEnv.config({path: '.env.test'})
+
 module.exports = {
   collectCoverageFrom: [
     "**/*.{js,jsx,ts,tsx}",
