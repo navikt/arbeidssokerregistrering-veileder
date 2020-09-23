@@ -13,13 +13,9 @@ const OverforTilArena  = props => {
     setStatus(status)
   }
 
-  const handleClick = (e) => {
-    e.preventDefault()
-    handleOverforing()
-  }
   return (
     <>
-      {status === 'IKKE_SENDT' && <Hovedknapp onClick={handleClick}>Overfør til Arena</Hovedknapp>}
+      {status === 'IKKE_SENDT' && <Hovedknapp onClick={handleOverforing}>Overfør til Arena</Hovedknapp>}
       {status === 'FEIL' && <AlertStripeFeil>Noe gikk galt under overføringen</AlertStripeFeil>}
       {status === 'SENDT' && <AlertStripeSuksess>Brukeren er overført</AlertStripeSuksess>}
     </>
