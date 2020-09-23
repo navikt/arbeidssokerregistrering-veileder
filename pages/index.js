@@ -48,6 +48,9 @@ export default function Home (props) {
           justify-content: center;
           margin: auto;
         }
+        main {
+          width: 960px;
+        }
       `}
       </style>
     </div>
