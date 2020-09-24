@@ -2,6 +2,7 @@ import Head from 'next/head'
 import axios from 'axios'
 import { Innholdstittel, Sidetittel, Normaltekst, Element, Systemtittel } from 'nav-frontend-typografi'
 import OverforTilArena from '../components/overfor-til-arena'
+import Registrering from '../components/registrering'
 import NAVSPA from '@navikt/navspa';
 
 const decoratorConfig = {
@@ -28,15 +29,7 @@ export default function Home (props) {
       <main>
         <Sidetittel>Jomar Testursson</Sidetittel>
         <Innholdstittel>Besvarelse</Innholdstittel>
-        <Systemtittel>Bruker sendte inn arbeidssøkerregistreringen {new Date(props.registrering.opprettetDato).toLocaleDateString()}</Systemtittel>
-        {props.registrering.teksterForBesvarelse.map(besvarelse => (
-          <>
-            <Element>{besvarelse.sporsmal}</Element>
-            <Normaltekst>{besvarelse.svar}</Normaltekst>
-          </>
-        ))}
-        <Element>Siste stilling</Element>
-        <Normaltekst>{props.registrering.sisteStilling.label}</Normaltekst>
+        <Registrering {...props.registrering} />
         <OverforTilArena id={props.registrering.id} />
       </main>
 
