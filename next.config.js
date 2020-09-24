@@ -15,11 +15,11 @@ module.exports = {
     return [
       {
         source: '/isAlive',
-        destination: '/api/is-alive'
+        destination: '/api/alive-and-ready'
       },
       {
         source: '/isReady',
-        destination: '/api/is-ready'
+        destination: '/api/alive-and-ready'
       }
     ]
   },
