@@ -19,7 +19,7 @@ spec:
   ingresses:
     - "https://arbeid.dev.adeo.no/arbeid/arbeidssokerregistrering-veileder"
     - "https://arbeid.dev.nav.no/arbeid/arbeidssokerregistrering-veileder"
-  #accessPolicy:
-  #  outbound:
-  #    external:
-  #      - host: https://veilarbregistrering-q1.nais.preprod.local
+  accessPolicy:
+    outbound:
+      external:
+        - host: https://internarbeidsflatedecorator.nais.adeo.no
