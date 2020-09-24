@@ -23,4 +23,3 @@ spec:
     outbound:
       external:
         - host: internarbeidsflatedecorator.nais.adeo.no
-        - host: veilarbregistrering-q1.nais.preprod.local
