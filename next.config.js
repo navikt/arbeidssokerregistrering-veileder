@@ -10,12 +10,26 @@ const withTranspileModules = require('next-transpile-modules')(
   navFrontendModuler
 )
 
-module.exports = withTranspileModules(
-  withLess(
-    withReactSvg({
-      include: path.resolve(__dirname, 'public/assets/svg'),
-      reactStrictMode: true,
-      basePath: process.env.BASE_PATH
-    })
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: '/isAlive',
+        destination: '/api/is-alive'
+      },
+      {
+        source: '/isReady',
+        destination: '/api/is-ready'
+      }
+    ]
+  },
+  ...withTranspileModules(
+    withLess(
+      withReactSvg({
+        include: path.resolve(__dirname, 'public/assets/svg'),
+        reactStrictMode: true,
+        basePath: process.env.BASE_PATH
+      })
+    )
   )
-)
+}
