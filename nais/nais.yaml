@@ -9,12 +9,12 @@ spec:
   image: {{image}}
   port: 3000
   liveness:
-    path: /isAlive
+    path: /arbeid/arbeidssokerregistrering-veileder/isAlive
     timeout: 1
     periodSeconds: 5
     failureThreshold: 10
   readiness:
-    path: /isReady
+    path: /arbeid/arbeidssokerregistrering-veileder/isReady
     timeout: 1
   ingresses:
     - "https://arbeid.dev.adeo.no/arbeid/arbeidssokerregistrering-veileder"
