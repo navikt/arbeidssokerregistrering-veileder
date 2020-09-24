@@ -22,4 +22,4 @@ spec:
   accessPolicy:
     outbound:
       external:
-        - host: https://internarbeidsflatedecorator.nais.adeo.no
+        - host: internarbeidsflatedecorator.nais.adeo.no
