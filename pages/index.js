@@ -2,6 +2,7 @@ import Head from 'next/head'
 import axios from 'axios'
 import useSWR from 'swr'
 import { Innholdstittel, Sidetittel } from 'nav-frontend-typografi'
+import NavFrontendSpinner from 'nav-frontend-spinner'
 import OverforTilArena from '../components/overfor-til-arena'
 import Registrering from '../components/registrering'
 import NAVSPA from '@navikt/navspa';
@@ -13,7 +14,8 @@ const decoratorConfig = {
 function Home () {
   const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/get-registrering`, fetcher)
   const InternflateDecorator = NAVSPA.importer('internarbeidsflatefs')
-  if (!data) return <>Loading...</>
+  
+  if (!data) return <NavFrontendSpinner transparent/>
   
   return (
     <div className='root'>
