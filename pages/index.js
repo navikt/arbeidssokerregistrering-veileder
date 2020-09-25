@@ -1,22 +1,19 @@
 import Head from 'next/head'
 import axios from 'axios'
-import { Innholdstittel, Sidetittel, Normaltekst, Element, Systemtittel } from 'nav-frontend-typografi'
+import useSWR from 'swr'
+import { Innholdstittel, Sidetittel } from 'nav-frontend-typografi'
 import OverforTilArena from '../components/overfor-til-arena'
 import Registrering from '../components/registrering'
 import NAVSPA from '@navikt/navspa';
-
+const fetcher = url => axios(url).then(result => result.data)
 const decoratorConfig = {
   appname: 'Arbeidssøkerregistrering-veileder'
 }
 
-Home.getInitialProps = async (ctx) => {
-  const { data } = await axios(`http://localhost:3000${process.env.NEXT_PUBLIC_API_URL}/get-registrering`)
-  return data
-}
-
-export default function Home (props) {
-
-  const InternflateDecorator = NAVSPA.importer('internarbeidsflatefs');
+function Home () {
+  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/get-registrering`, fetcher)
+  const InternflateDecorator = NAVSPA.importer('internarbeidsflatefs')
+  if (!data) return <>Loading...</>
   
   return (
     <div className='root'>
@@ -29,8 +26,8 @@ export default function Home (props) {
       <main>
         <Sidetittel>Jomar Testursson</Sidetittel>
         <Innholdstittel>Besvarelse</Innholdstittel>
-        <Registrering {...props.registrering} />
-        <OverforTilArena id={props.registrering.id} />
+        <Registrering {...data.registrering} />
+        <OverforTilArena id={data.registrering.id} />
       </main>
 
       <style jsx>{`
@@ -49,3 +46,5 @@ export default function Home (props) {
     </div>
   )
 }
+
+export default Home
