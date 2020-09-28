@@ -11,7 +11,6 @@ spec:
   azure:
     application:
       enabled: true
-      tenant: trygdeetaten.no
   liveness:
     path: /arbeid/arbeidssokerregistrering-veileder/isAlive
     timeout: 1
