@@ -18,10 +18,6 @@ module.exports = {
         destination: '/api/alive-and-ready'
       },
       {
-        source: '/oauth2/callback',
-        destination: '/api/oauth2/callback'
-      },
-      {
         source: '/isReady',
         destination: '/api/alive-and-ready'
       }
