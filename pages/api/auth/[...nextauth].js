@@ -13,6 +13,14 @@ const options = {
       accessTokenUrl: `https://login.microsoftonline.com/${process.env.AZURE_APP_TENANT_ID}/oauth2/v2.0/token`,
       requestTokenUrl: `https://login.microsoftonline.com/${process.env.AZURE_APP_TENANT_ID}/oauth2/v2.0/authorize`,
       authorizationUrl: `https://login.microsoftonline.com/${process.env.AZURE_APP_TENANT_ID}/oauth2/v2.0/authorize?response_type=code`,
+      profileUrl: 'https://graph.microsoft.com/v1.0/me',
+      profile: (profile) => {
+        return {
+          id: profile.id,
+          name: profile.displayName,
+          email: profile.mail,
+        }
+      },
       clientId: process.env.AZURE_APP_CLIENT_ID,
       clientSecret: process.env.AZURE_APP_CLIENT_SECRET,
     },
