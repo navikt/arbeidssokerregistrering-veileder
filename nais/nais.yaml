@@ -11,6 +11,10 @@ spec:
   azure:
     application:
       enabled: true
+      replyUrls:
+        - "https://arbeid.dev.adeo.no/arbeid/arbeidssokerregistrering-veileder/oauth2/callback"
+        - "https://arbeid.dev.nav.no/arbeid/arbeidssokerregistrering-veileder/oauth2/callback"
+        - "https://localhost:3000/oauth2/callback"
   liveness:
     path: /arbeid/arbeidssokerregistrering-veileder/isAlive
     timeout: 1
