@@ -3,6 +3,7 @@ import { useSession } from 'next-auth/client'
 import NAVSPA from '@navikt/navspa';
 import Soknad from '../components/soknad'
 import LoginKnapp from '../components/login-knapp';
+import LogoutKnapp from '../components/logout-knapp';
 const decoratorConfig = {
   appname: 'Arbeidssøkerregistrering-veileder'
 }
@@ -17,10 +18,11 @@ const Home = () => {
         <title>Arbeidssøkerregistrering - veileder</title>
       </Head>
 
-      <InternflateDecorator {...decoratorConfig}/>
+      {session && <InternflateDecorator {...decoratorConfig}/>}
 
       <main>
         {session && <Soknad />}
+        {session && <LogoutKnapp />}
         {!session && <LoginKnapp />}
       </main>
 
