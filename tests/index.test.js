@@ -5,7 +5,7 @@ describe('App', () => {
   it('renders without crashing', () => {
     render(<App />)
     expect(
-      screen.getByTitle('Venter...')
+      screen.getByText('Logg inn')
     ).toBeTruthy()
   })
 })
