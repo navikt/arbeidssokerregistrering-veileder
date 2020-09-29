@@ -30,5 +30,4 @@ spec:
     outbound:
       external:
         - host: internarbeidsflatedecorator.nais.adeo.no
-        - host: app.adeo.no
         - host: login.microsoftonline.com
