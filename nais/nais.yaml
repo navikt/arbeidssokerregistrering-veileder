@@ -11,7 +11,7 @@ spec:
   azure:
     application:
       enabled: true
-      replyUrls:
+      replyURLs:
         - "https://arbeid.dev.adeo.no/arbeid/arbeidssokerregistrering-veileder/api/auth/callback/oauth2"
         - "https://arbeid.dev.nav.no/arbeid/arbeidssokerregistrering-veileder/api/auth/callback/oauth2"
         - "http://localhost:3000/api/auth/callback/oauth2"
