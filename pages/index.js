@@ -11,7 +11,7 @@ const decoratorConfig = {
   appname: 'Arbeidssøkerregistrering-veileder'
 }
 
-function Home () {
+const Home = () => {
   const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/get-registrering`, fetcher)
   const InternflateDecorator = NAVSPA.importer('internarbeidsflatefs')
   
