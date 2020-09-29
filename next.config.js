@@ -11,6 +11,7 @@ const withTranspileModules = require('next-transpile-modules')(
 )
 
 module.exports = {
+  basePath: `process.env.BASE_PATH`,
   async rewrites() {
     return [
       {
