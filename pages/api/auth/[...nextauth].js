@@ -86,7 +86,7 @@ const options = {
   // https://next-auth.js.org/configuration/callbacks 
   callbacks: { 
     // signIn: async (user, account, profile) => { return Promise.resolve(true) },
-    redirect: async (url, baseUrl) => { return Promise.resolve(process.env.NEXTAUTH_REDIRECT_URL || baseUrl) },
+    // redirect: async (url, baseUrl) => { return Promise.resolve(process.env.NEXTAUTH_REDIRECT_URL || baseUrl) },
     // session: async (session, user) => { return Promise.resolve(session) },
     // jwt: async (token, user, account, profile, isNewUser) => { return Promise.resolve(token) }
   },
