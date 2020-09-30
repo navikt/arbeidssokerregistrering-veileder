@@ -1,5 +1,5 @@
 import { Hovedknapp } from 'nav-frontend-knapper'
-import { signOut } from 'next-auth/client'
+import { signOut } from '@zrrrzzt/next-auth/client'
 
 const LogoutKnapp = () => {
   return (

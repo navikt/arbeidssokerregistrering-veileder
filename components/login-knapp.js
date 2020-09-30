@@ -1,5 +1,5 @@
 import { Hovedknapp } from 'nav-frontend-knapper'
-import { signIn } from 'next-auth/client'
+import { signIn } from '@zrrrzzt/next-auth/client'
 
 const LoginKnapp = () => {
   return (
