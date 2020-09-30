@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useSession } from '@zrrrzzt/next-auth/client'
+import { useSession } from 'next-auth/client'
 import NAVSPA from '@navikt/navspa';
 import Soknad from '../components/soknad'
 import LoginKnapp from '../components/login-knapp';

@@ -1,10 +1,12 @@
-import { Provider } from '@zrrrzzt/next-auth/client'
+import { Provider } from 'next-auth/client'
 import './_app.less'
 import 'nav-frontend-typografi-style/src/index.less'
 
 export default function App({Component, pageProps}) {
   return (
-    <Provider session={pageProps.session}>
+    <Provider session={pageProps.session} options={{
+      basePath: '/arbeid/arbeidssokerregistrering-veileder/api/auth'
+    }}>
       <div className='app'>
         <Component {...pageProps} />
         <style jsx>{`
