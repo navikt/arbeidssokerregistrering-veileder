@@ -1,6 +1,13 @@
-export default (request, response) => {
-  response.statusCode = 200
-  response.json(bruker)
+import axios from 'axios'
+
+export default async (request, response) => {
+  try {
+    const { data } = await axios(process.env.VEILARBREGISTRERING_URL, { headers: request.headers })
+    response.json(data)
+  } catch (error) {
+    console.error(error)
+    response.json(bruker)
+  }
 }
 
 export const bruker = {
