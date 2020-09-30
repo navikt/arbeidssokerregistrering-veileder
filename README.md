@@ -13,6 +13,7 @@ Krever [Node.js](https://nodejs.org/), fortrinnsvis versjon >= 14
 - innstaller avhengigheter `npm i`
 - lag en `.env.local` basert på [eksempel.env.local](eksempel.env.local)
 - start utviklingsserver `npm run dev`
+- besøk [http://localhost:3000/arbeid/registrering](http://localhost:3000/arbeid/registrering)
 
 ## Henvendelser
 
