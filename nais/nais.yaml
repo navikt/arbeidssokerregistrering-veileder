@@ -31,4 +31,4 @@ spec:
       external:
         - host: internarbeidsflatedecorator.nais.adeo.no
         - host: login.microsoftonline.com
-        - host: veilarbregistrering-q1.nais.preprod.local
+        - host: veilarbregistrering-q1.dev.adeo.no
