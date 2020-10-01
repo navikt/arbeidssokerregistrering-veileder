@@ -6,7 +6,7 @@ export default async (request, response) => {
   if (session) {
     const bearer = `Bearer ${session.accessToken}`
     try {
-      axios.defaults.headers.common.Authorize = bearer
+      axios.defaults.headers.common.Authorization = bearer
       const { data } = await axios(process.env.VEILARBREGISTRERING_URL)
       response.json(data)
     } catch (error) {
