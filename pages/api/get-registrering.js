@@ -4,15 +4,16 @@ import { getSession } from 'next-auth/client'
 export default async (request, response) => {
   const session = await getSession({ req:request })
   if (session) {
+    const bearer = `Bearer ${session.accessToken}`
     try {
-      const { data } = await axios(process.env.VEILARBREGISTRERING_URL, { headers: request.headers })
+      axios.defaults.headers.common.Authorize = bearer
+      const { data } = await axios(process.env.VEILARBREGISTRERING_URL)
       response.json(data)
     } catch (error) {
       console.error(error)
       response.json(bruker)
     }
   } else {
-    console.log('no session')
     response.json(bruker)
   }
 }

@@ -87,8 +87,20 @@ const options = {
   callbacks: { 
     // signIn: async (user, account, profile) => { return Promise.resolve(true) },
     // redirect: async (url, baseUrl) => { return Promise.resolve(process.env.NEXTAUTH_REDIRECT_URL || baseUrl) },
-    // session: async (session, user) => { return Promise.resolve(session) },
-    // jwt: async (token, user, account, profile, isNewUser) => { return Promise.resolve(token) }
+    session: async (session, user) => {
+      const  isSignedin = user ? true : false
+      if (isSignedin) {
+        session.accessToken = user.accessToken
+      } 
+      return Promise.resolve(session) 
+    },
+    jwt: async (token, user, account, profile, isNewUser) => {
+      const isSigning = user ? true : false
+      if (isSigning) {
+        token.accessToken = account.accessToken
+      }
+      return Promise.resolve(token) 
+    }
   },
 
   // Events are useful for logging

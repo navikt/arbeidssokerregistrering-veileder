@@ -1,5 +1,6 @@
 const withLess = require('@zeit/next-less')
 const withReactSvg = require('next-react-svg')
+const { redirect } = require('next/dist/next-server/server/api-utils')
 const path = require('path')
 
 const navFrontendModuler = Object.keys(
