@@ -1,11 +1,18 @@
 import axios from 'axios'
+import { getSession } from 'next-auth/client'
 
 export default async (request, response) => {
-  try {
-    const { data } = await axios(process.env.VEILARBREGISTRERING_URL, { headers: request.headers })
-    response.json(data)
-  } catch (error) {
-    console.error(error)
+  const session = await getSession({ req:request })
+  if (session) {
+    try {
+      const { data } = await axios(process.env.VEILARBREGISTRERING_URL, { headers: request.headers })
+      response.json(data)
+    } catch (error) {
+      console.error(error)
+      response.json(bruker)
+    }
+  } else {
+    console.log('no session')
     response.json(bruker)
   }
 }
