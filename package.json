@@ -43,7 +43,7 @@
     "swr": "0.3.5"
   },
   "engines": {
-    "node": ">=12.18.4"
+    "node": ">=12.19.0"
   },
   "devDependencies": {
     "@testing-library/dom": "7.24.2",
