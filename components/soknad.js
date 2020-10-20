@@ -12,8 +12,8 @@ const Innhold = props => {
     <>
       <Sidetittel>Jomar Testursson</Sidetittel>
       <Innholdstittel>Besvarelse</Innholdstittel>
-      <Registrering {...data.registrering} />
-      <OverforTilArena id={data.registrering.id} />
+      <Registrering {...data} />
+      <OverforTilArena id={data.id} />
     </>
   )
 }
