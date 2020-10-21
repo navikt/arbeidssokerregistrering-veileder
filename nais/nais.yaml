@@ -36,3 +36,4 @@ spec:
         - host: login.microsoftonline.com
         - host: veilarbregistrering-q1.dev.adeo.no
         - host: veilarbproxy.q1.svc.nais.local
+        - host: arbeid.dev.intern.nav.no
