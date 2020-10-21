@@ -27,12 +27,13 @@ spec:
   accessPolicy:
     inbound:
       rules:
-        - application: arbeidssokerregistrering-veileder
+        - application: arbeid.dev.intern.nav.no
     outbound:
       rules:
-        - application: arbeidssokerregistrering-veileder
+        - application: arbeid.dev.intern.nav.no
       external:
         - host: internarbeidsflatedecorator.nais.adeo.no
         - host: login.microsoftonline.com
         - host: veilarbregistrering-q1.dev.adeo.no
         - host: veilarbproxy.q1.svc.nais.local
+        - host: arbeid.dev.intern.nav.no
