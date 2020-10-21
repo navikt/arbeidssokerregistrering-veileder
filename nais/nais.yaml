@@ -12,8 +12,7 @@ spec:
     application:
       enabled: true
       replyURLs:
-        - "https://arbeid.dev.adeo.no/arbeid/arbeidssokerregistrering-veileder/api/auth/callback/oauth2"
-        - "https://arbeid.dev.nav.no/arbeid/arbeidssokerregistrering-veileder/api/auth/callback/oauth2"
+        - "https://arbeid.dev.intern.nav.no/arbeid/arbeidssokerregistrering-veileder/api/auth/callback/oauth2"
         - "http://localhost:3000/arbeid/arbeidssokerregistrering-veileder/api/auth/callback/oauth2"
   liveness:
     path: /arbeid/arbeidssokerregistrering-veileder/isAlive
@@ -24,8 +23,7 @@ spec:
     path: /arbeid/arbeidssokerregistrering-veileder/isReady
     timeout: 1
   ingresses:
-    - "https://arbeid.dev.adeo.no/arbeid/arbeidssokerregistrering-veileder"
-    - "https://arbeid.dev.nav.no/arbeid/arbeidssokerregistrering-veileder"
+    - "https://arbeid.dev.intern.nav.no/arbeid/arbeidssokerregistrering-veileder"
   accessPolicy:
     outbound:
       external:
