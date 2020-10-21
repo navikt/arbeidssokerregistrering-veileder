@@ -3,6 +3,21 @@ import { getSession } from 'next-auth/client'
 import { getDefaultHeaders } from './utils'
 
 export default async (request, response) => {
+  try {
+    const { data } = axios('http://localhost:3000/arbeid/arbeidssokerregistrering-veileder/api/auth/session')
+    console.log(data)
+  } catch (error) {
+    console.error('localhost')
+    console.error(error)
+  }
+  try {
+    const { data } = axios('https://arbeid.dev.intern.nav.no/arbeid/arbeidssokerregistrering-veileder/api/auth/session')
+    console.log(data)
+  } catch (error) {
+    console.error('dev.intern')
+    console.error(error)
+  }
+
   const session = await getSession({ req: request })
   if (!session) return Promise.reject(new Error('Missing session'))
 
