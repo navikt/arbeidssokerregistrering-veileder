@@ -1,6 +1,10 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 ![](https://github.com/navikt/arbeidssokerregistrering-veileder/workflows/Build%20and%20deploy/badge.svg)
 
+Denne er pr nå litt "nede"
+
+Må gjøres en del konfigurasjonsmagi etter at @zeit/next-less er deprecated og Next.js 10.0.6 støtter webpack 4 og 5
+
 # arbeidssokerregistrering-veileder
 
 Løsning for at veiledere skal kunne overføre registrerte arbeidssøkere som har stoppet i prosessen til Arena.
